@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "536131713266",
+    "firebase_url": "https://aamku-connect.firebaseio.com",
+    "project_id": "aamku-connect",
+    "storage_bucket": "aamku-connect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536131713266:android:d9fecc378669f7af24b86b",
+        "android_client_info": {
+          "package_name": "com.example.aamkuconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536131713266-4s4aaatjbivivcfadm37nor43k4ptb7i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aamkuconnect",
+            "certificate_hash": "ea69326514619083570950e578c51fcf45663e29"
+          }
+        },
+        {
+          "client_id": "536131713266-9vhbehd2gfk73sqi6nf1c3hogndjoj8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoAPt7OvsySmx-BoQ2k41Cw46oEbsws_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536131713266-9vhbehd2gfk73sqi6nf1c3hogndjoj8c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
