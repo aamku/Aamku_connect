@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Aamku connect</string>
+    <string name="title_activity_dashboard">Aamku connect</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Aamku connect</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">LOG OUT</string>
+    <string name="action_notif">Notification</string>
+
+
+    <string name="menu_home">Add user</string>
+
+
 </resources>
