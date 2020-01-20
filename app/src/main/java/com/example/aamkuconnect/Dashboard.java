@@ -7,6 +7,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -17,6 +20,8 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 
 public class Dashboard extends AppCompatActivity {
@@ -35,15 +40,28 @@ public class Dashboard extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         user = fAuth.getCurrentUser();
 
-        if(user == null){
+        if(user == null && !SharedPrefManager.getInstance(this).isLoggedIn()){
 
-             Intent i = new Intent(Dashboard.this,MainActivity.class);
+             Intent i = new Intent(Dashboard.this,ChooseLogin.class);
              startActivity(i);
              finish();
         }
+      /*  else if( SharedPrefManager.getInstance(this).isLoggedIn()){
+
+            Intent i = new Intent(Dashboard.this,SalesDashboard.class);
+            startActivity(i);
+            finish();
+        }
+        else{
+
+            Intent i = new Intent(Dashboard.this,RetailDashboard.class);
+            startActivity(i);
+            finish();
+        }  */
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Admin dashboard");
 
         drawer = findViewById(R.id.drawer_layout);
 
@@ -51,7 +69,7 @@ public class Dashboard extends AppCompatActivity {
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FirstFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_add);
+           // navigationView.setCheckedItem(R.id.nav_add);
         }
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -65,6 +83,7 @@ public class Dashboard extends AppCompatActivity {
 
                         Intent i = new Intent(Dashboard.this,AddUser.class);
                         startActivity(i);
+                        drawer.closeDrawers();
                         finish();
                         break;
 
@@ -72,6 +91,7 @@ public class Dashboard extends AppCompatActivity {
 
                         Intent in = new Intent(Dashboard.this,AllUsers.class);
                         startActivity(in);
+                        drawer.closeDrawers();
                         finish();
                         break;
                 }
@@ -89,12 +109,36 @@ public class Dashboard extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        if(drawer.isDrawerOpen(GravityCompat.START)){
+     /*   if(drawer.isDrawerOpen(GravityCompat.START)){
 
             drawer.closeDrawer(GravityCompat.START);
         }else{
+
+
             super.onBackPressed();
-        }
+        }   */
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Dashboard.this);
+        builder.setMessage("Do you want to exit.");
+        builder.setCancelable(true);
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.cancel();
+            }
+        });
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                finish();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 
     @Override
@@ -113,11 +157,12 @@ public class Dashboard extends AppCompatActivity {
 
             case R.id.action_logout:
 
-                fAuth.signOut();
-                Intent i = new Intent(Dashboard.this,MainActivity.class);
-                startActivity(i);
-                finish();
-                break;
+                    fAuth.signOut();
+                    Intent i = new Intent(Dashboard.this,ChooseLogin.class);
+                    startActivity(i);
+                    finish();
+                    break;
+
         }
 
         return super.onOptionsItemSelected(item);

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckOtp"
+    android:padding="16dp">
+
+    <in.aabhasjindal.otptextview.OtpTextView
+        android:id="@+id/otp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#345"
+        app:height="40dp"
+        app:width="40dp"
+        app:bar_enabled="true"
+        app:bar_active_color="@color/colorAccent"
+        app:box_margin_left="5dp"
+        app:box_margin="2dp"
+        app:bar_height="5dp"
+        app:length="4"
+        app:otp_text_size="24dp"/>
+
+</RelativeLayout>
