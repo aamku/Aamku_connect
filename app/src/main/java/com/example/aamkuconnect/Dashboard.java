@@ -35,7 +35,12 @@ public class Dashboard extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         user = fAuth.getCurrentUser();
 
-       // if()
+        if(user == null){
+
+             Intent i = new Intent(Dashboard.this,MainActivity.class);
+             startActivity(i);
+             finish();
+        }
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,6 +65,13 @@ public class Dashboard extends AppCompatActivity {
 
                         Intent i = new Intent(Dashboard.this,AddUser.class);
                         startActivity(i);
+                        finish();
+                        break;
+
+                    case R.id.nav_users:
+
+                        Intent in = new Intent(Dashboard.this,AllUsers.class);
+                        startActivity(in);
                         finish();
                         break;
                 }

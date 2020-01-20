@@ -131,8 +131,7 @@
                 android:id="@+id/dept"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:inputType="phone">
+                android:layout_marginRight="10dp">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -141,7 +140,10 @@
            <Spinner
                android:layout_width="match_parent"
                android:layout_height="50dp"
-               android:id="@+id/month"/>
+               android:id="@+id/month"
+               android:layout_marginTop="10dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -161,6 +163,14 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/productSales"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -172,7 +182,6 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="15dp"
             android:textColor="#fff"/>
-
 
     </LinearLayout>
 
