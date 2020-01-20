@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/first_image" android:top="-30mm">
+        <bitmap android:src="@drawable/aamku_connect"
+            android:gravity="top"/>
+    </item>
+    <item android:id="@+id/second_image" android:top="10dp" android:left="10dp">
+        <bitmap android:src="@drawable/team"
+            android:gravity="center" />
+    </item>
+</layer-list>

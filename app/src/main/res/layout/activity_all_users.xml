@@ -14,17 +14,35 @@
         android:layout_centerInParent="true"
         android:id="@+id/progress"/>
 
-    <Spinner
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/filter"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/card_Filter">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/filter"
+                />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/filter"
+        android:layout_below="@+id/card_Filter"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        tools:ignore="NotSibling" />
 
 </RelativeLayout>

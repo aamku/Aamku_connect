@@ -8,71 +8,78 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardUseCompatPadding="true"
-        app:cardBackgroundColor="#fff"
         app:cardCornerRadius="3dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_gradient">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:id="@+id/user_name"
-                android:text="Hello there"
-                android:textColor="#345"
-                android:textStyle="bold"/>
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="7dp"
-                android:background="#cdcdcd"
+                android:layout_height="1dp"
+                android:background="#FFF"
                 android:layout_below="@id/user_name"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
                 android:id="@+id/user_role"
                 android:layout_below="@+id/user_name"
-                android:layout_marginTop="15dp"
-                android:text="Hello there"/>
+                android:textColor="#FFF"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:id="@+id/user_phone"
                 android:layout_below="@+id/user_role"
-                android:layout_marginTop="10dp"
-                android:text="Hello there"/>
+                android:textColor="#FFF"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
                 android:id="@+id/user_email"
                 android:layout_below="@+id/user_phone"
-                android:layout_marginTop="10dp"
-                android:text="Hello there"/>
+                android:textColor="#FFF"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="7dp"
-                android:background="#cdcdcd"
+                android:layout_height="1dp"
+                android:background="#FFF"
                 android:layout_below="@id/user_email"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:id="@+id/user_empid"
                 android:layout_below="@+id/user_email"
-                android:layout_marginTop="15dp"
-                android:text="Hello there"/>
+                android:textColor="#FFF"/>
 
         </RelativeLayout>
 
