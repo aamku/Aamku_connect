@@ -37,6 +37,7 @@ public class CheckOtp extends AppCompatActivity {
 
     private static final String URL = "https://aamku-connect.herokuapp.com/checkOtp";
     private static final String KEY_PHONE = "keyphone";
+    private static final String KEY_TYPE = "keytype";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,20 +111,13 @@ public class CheckOtp extends AppCompatActivity {
                                     SharedPreferences sharedPreferences = getSharedPreferences("simplifiedcodingsharedpref", Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
                                     editor.putString(KEY_PHONE, message);
+                                    editor.putString(KEY_TYPE,type);
                                     editor.apply();
 
-                                    if(type.equals("Salesperson")){
+                                    Intent i = new Intent(CheckOtp.this,Dashboard.class);
+                                    startActivity(i);
+                                    finish();
 
-                                        Intent i = new Intent(CheckOtp.this,SalesDashboard.class);
-                                        startActivity(i);
-                                        finish();
-                                    }
-                                    else{
-
-                                        Intent i = new Intent(CheckOtp.this,RetailDashboard.class);
-                                        startActivity(i);
-                                        finish();
-                                    }
 
                                 }
 

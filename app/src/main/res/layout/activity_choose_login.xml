@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ChooseLogin"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/main_gradient">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -25,7 +26,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/shop"
+                android:src="@drawable/manager"
                 android:id="@+id/adminImg"
                 android:layout_centerInParent="true"/>
 
@@ -56,7 +57,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/shop"
+                android:src="@drawable/boss"
                 android:id="@+id/salesPersonImg"
                 android:layout_centerInParent="true"/>
 
@@ -87,7 +88,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/shop"
+                android:src="@drawable/retailer"
                 android:id="@+id/retailImg"
                 android:layout_centerInParent="true"/>
 

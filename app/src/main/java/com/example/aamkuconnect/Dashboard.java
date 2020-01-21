@@ -9,14 +9,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.example.aamkuconnect.Salesperson.AddRetailer;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,6 +36,9 @@ public class Dashboard extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseUser user;
 
+    SharedPreferences sharedPreferences;
+    String s;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +47,16 @@ public class Dashboard extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         user = fAuth.getCurrentUser();
 
-        if(user == null && !SharedPrefManager.getInstance(this).isLoggedIn()){
+        sharedPreferences = getSharedPreferences("simplifiedcodingsharedpref", Context.MODE_PRIVATE);
+        s = sharedPreferences.getString("keytype","");
+
+        if(user == null && !s.contains("Salesperson") && !s.contains("Retailer")){
 
              Intent i = new Intent(Dashboard.this,ChooseLogin.class);
              startActivity(i);
              finish();
         }
-      /*  else if( SharedPrefManager.getInstance(this).isLoggedIn()){
+     /*   else if(s.equals("Salesperson")){
 
             Intent i = new Intent(Dashboard.this,SalesDashboard.class);
             startActivity(i);
@@ -61,7 +71,7 @@ public class Dashboard extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Admin dashboard");
+
 
         drawer = findViewById(R.id.drawer_layout);
 
@@ -70,6 +80,33 @@ public class Dashboard extends AppCompatActivity {
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FirstFragment()).commit();
            // navigationView.setCheckedItem(R.id.nav_add);
+        }
+
+        Menu menu = navigationView.getMenu();
+
+        if(s.equals("Salesperson")){
+
+            getSupportActionBar().setTitle("Salesperson dashboard");
+            menu.findItem(R.id.nav_add).setVisible(false);
+            menu.findItem(R.id.nav_users).setVisible(false);
+            menu.findItem(R.id.nav_add_retailer).setVisible(true);
+            menu.findItem(R.id.nav_all_retailers).setVisible(true);
+
+        }else if(s.equals("Retailer")){
+
+            getSupportActionBar().setTitle("Retailer dashboard");
+            menu.findItem(R.id.nav_add).setVisible(false);
+            menu.findItem(R.id.nav_users).setVisible(false);
+            menu.findItem(R.id.nav_add_retailer).setVisible(false);
+            menu.findItem(R.id.nav_all_retailers).setVisible(false);
+        }
+        else{
+
+            getSupportActionBar().setTitle("Admin dashboard");
+            menu.findItem(R.id.nav_add).setVisible(true);
+            menu.findItem(R.id.nav_users).setVisible(true);
+            menu.findItem(R.id.nav_add_retailer).setVisible(false);
+            menu.findItem(R.id.nav_all_retailers).setVisible(false);
         }
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -93,6 +130,18 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(in);
                         drawer.closeDrawers();
                         finish();
+                        break;
+
+                    case R.id.nav_add_retailer:
+
+                        Intent inn = new Intent(Dashboard.this, AddRetailer.class);
+                        startActivity(inn);
+                        drawer.closeDrawers();
+                        finish();
+                        break;
+
+                    case R.id.nav_all_retailers:
+
                         break;
                 }
 
@@ -147,6 +196,30 @@ public class Dashboard extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.dashboard, menu);
 
+        MenuItem item = menu.findItem(R.id.action_logout);
+        MenuItem item1 = menu.findItem(R.id.action_sales_logout);
+        MenuItem item2 = menu.findItem(R.id.action_retail_logout);
+
+        if(user != null){
+
+            item.setVisible(true);
+            item1.setVisible(false);
+            item2.setVisible(false);
+        }
+        else if(s.equals("Salesperson")){
+
+            item.setVisible(false);
+            item1.setVisible(true);
+            item2.setVisible(false);
+
+        }
+        else{
+
+            item.setVisible(false);
+            item1.setVisible(false);
+            item2.setVisible(true);
+        }
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -162,6 +235,22 @@ public class Dashboard extends AppCompatActivity {
                     startActivity(i);
                     finish();
                     break;
+
+            case R.id.action_retail_logout:
+
+                SharedPrefManager.getInstance(Dashboard.this).logout();
+                Intent in = new Intent(Dashboard.this,ChooseLogin.class);
+                startActivity(in);
+                finish();
+                break;
+
+            case R.id.action_sales_logout:
+
+                SharedPrefManager.getInstance(Dashboard.this).logout();
+                Intent go = new Intent(Dashboard.this,ChooseLogin.class);
+                startActivity(go);
+                finish();
+                break;
 
         }
 

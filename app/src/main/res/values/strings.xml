@@ -9,7 +9,13 @@
     <string name="action_notif">Notification</string>
 
 
-    <string name="menu_home">Add user</string>
+    //Admin
+    <string name="menu_home">Add users</string>
+    <string name="menu_all">All users</string>
+
+    //Retailers string
+    <string name="menu_all_retailers">All Retailers</string>
+    <string name="menu_add_retailers">Add Retailers</string>
 
 
 </resources>
