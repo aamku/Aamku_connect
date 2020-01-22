@@ -15,6 +15,11 @@
             android:title="@string/menu_all" />
 
         <item
+            android:id="@+id/nav_pending_requests"
+            android:icon="@drawable/ic_access_time_blue_grey_500_24dp"
+            android:title="@string/menu_pending" />
+
+        <item
             android:id="@+id/nav_add_retailer"
             android:icon="@drawable/ic_group_add_blue_grey_500_24dp"
             android:title="@string/menu_add_retailers" />

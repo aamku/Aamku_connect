@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Salesperson.AddRetailer"></activity>
-        <activity android:name=".RetailDashboard" />
-        <activity android:name=".SalesDashboard" />
+        <activity android:name=".PendingRetailers"></activity>
+        <activity android:name=".Salesperson.AddRetailer" />
         <activity android:name=".CheckOtp" />
         <activity android:name=".PhoneAuth" />
         <activity android:name=".ChooseLogin" />
@@ -19,7 +18,7 @@
         <activity android:name=".FirstFragment" />
         <activity
             android:name=".Dashboard"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddUser" />
         <activity android:name=".MainActivity" />
         <activity

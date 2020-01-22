@@ -89,6 +89,7 @@ public class Dashboard extends AppCompatActivity {
             getSupportActionBar().setTitle("Salesperson dashboard");
             menu.findItem(R.id.nav_add).setVisible(false);
             menu.findItem(R.id.nav_users).setVisible(false);
+            menu.findItem(R.id.nav_pending_requests).setVisible(false);
             menu.findItem(R.id.nav_add_retailer).setVisible(true);
             menu.findItem(R.id.nav_all_retailers).setVisible(true);
 
@@ -97,6 +98,7 @@ public class Dashboard extends AppCompatActivity {
             getSupportActionBar().setTitle("Retailer dashboard");
             menu.findItem(R.id.nav_add).setVisible(false);
             menu.findItem(R.id.nav_users).setVisible(false);
+            menu.findItem(R.id.nav_pending_requests).setVisible(false);
             menu.findItem(R.id.nav_add_retailer).setVisible(false);
             menu.findItem(R.id.nav_all_retailers).setVisible(false);
         }
@@ -105,6 +107,7 @@ public class Dashboard extends AppCompatActivity {
             getSupportActionBar().setTitle("Admin dashboard");
             menu.findItem(R.id.nav_add).setVisible(true);
             menu.findItem(R.id.nav_users).setVisible(true);
+            menu.findItem(R.id.nav_pending_requests).setVisible(true);
             menu.findItem(R.id.nav_add_retailer).setVisible(false);
             menu.findItem(R.id.nav_all_retailers).setVisible(false);
         }
@@ -130,6 +133,14 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(in);
                         drawer.closeDrawers();
                         finish();
+                        break;
+
+                    case R.id.nav_pending_requests:
+
+                        Intent go = new Intent(Dashboard.this,PendingRetailers.class);
+                        startActivity(go);
+                        finish();
+                        drawer.closeDrawers();
                         break;
 
                     case R.id.nav_add_retailer:

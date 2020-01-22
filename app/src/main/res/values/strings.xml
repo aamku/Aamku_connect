@@ -12,6 +12,7 @@
     //Admin
     <string name="menu_home">Add users</string>
     <string name="menu_all">All users</string>
+    <string name="menu_pending">Retailers requests</string>
 
     //Retailers string
     <string name="menu_all_retailers">All Retailers</string>

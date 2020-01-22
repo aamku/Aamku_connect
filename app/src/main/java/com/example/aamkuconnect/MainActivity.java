@@ -18,6 +18,13 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+
 public class MainActivity extends AppCompatActivity {
 
     TextInputEditText username,pwd;
@@ -87,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(in);
                         finish();
 
+                     //   saveAdmin();
+
                         prg.dismiss();
                     }else{
 
@@ -98,4 +107,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+ /*   private void saveAdmin(){
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .readTimeout(20,TimeUnit.SECONDS)
+                .writeTimeout(20,TimeUnit.SECONDS)
+                .build();
+
+        RequestBody formBody = new FormBody.Builder()
+                .add("phone_id",phone_id)
+                .add("name",retailer_name.getText().toString())
+                .build();
+
+        Request request = new Request.Builder().post(formBody).url(URL).build();
+
+    }   */
 }
