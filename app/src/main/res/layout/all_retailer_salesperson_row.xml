@@ -33,7 +33,7 @@
 
    </androidx.cardview.widget.CardView>  -->
 
-    <TableRow android:background="#0079D6" android:padding="5dp">
+    <TableRow android:background="@drawable/main_gradient" android:padding="8dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,13 +54,13 @@
             android:text="Status" />
     </TableRow>
 
-    <TableRow android:background="#DAE8FC" android:padding="5dp">
+    <TableRow android:background="#EEE" android:padding="8dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Digvijay singh"
+            android:text=""
             android:id="@+id/retName"/>
 
         <TextView
