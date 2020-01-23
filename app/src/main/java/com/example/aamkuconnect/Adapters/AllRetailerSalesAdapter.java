@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.aamkuconnect.Models.AllRetailerModel;
 import com.example.aamkuconnect.R;
 
@@ -38,6 +41,19 @@ public class AllRetailerSalesAdapter extends RecyclerView.Adapter<AllRetailerSal
     public void onBindViewHolder(@NonNull AllRetailerSalesAdapter.ViewHolder holder, int position) {
 
         AllRetailerModel model = retailerList.get(position);
+
+        holder.retName.setText(model.getMy_retailer_name());
+        holder.retDate.setText(model.getRetailer_date());
+     //   holder.retStatus.setText(model.getRetailer_status());
+        if(model.getRetailer_status().equals("pending")){
+            Glide.with(context).load(R.drawable.ic_info_outline_amber_500_24dp).into(holder.statusIcon);
+        }
+        else if(model.getRetailer_status().equals("approved")){
+            Glide.with(context).load(R.drawable.ic_done_green_500_24dp).into(holder.statusIcon);
+        }
+        else{
+            Glide.with(context).load(R.drawable.ic_highlight_off_red_400_24dp).into(holder.statusIcon);
+        }
     }
 
     @Override
@@ -45,10 +61,19 @@ public class AllRetailerSalesAdapter extends RecyclerView.Adapter<AllRetailerSal
         return retailerList.size();
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        TextView retName,retDate,retStatus;
+        ImageView statusIcon;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            retName = itemView.findViewById(R.id.retName);
+            retDate = itemView.findViewById(R.id.retDate);
+            statusIcon = itemView.findViewById(R.id.statusIcon);
+          //  retStatus = itemView.findViewById(R.id.retStatus);
         }
     }
 }

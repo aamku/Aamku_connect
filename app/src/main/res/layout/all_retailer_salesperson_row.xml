@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-   <androidx.cardview.widget.CardView
+  <!-- <androidx.cardview.widget.CardView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        app:cardUseCompatPadding="true"
@@ -17,20 +18,73 @@
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginLeft="20dp"
+
                android:id="@+id/retName"
                android:text="name"/>
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginRight="20dp"
                android:id="@+id/retDate"
                android:text="date"
                android:layout_alignParentRight="true"/>
 
        </RelativeLayout>
 
-   </androidx.cardview.widget.CardView>
+   </androidx.cardview.widget.CardView>  -->
 
-</RelativeLayout>
+    <TableRow android:background="#0079D6" android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:text="Name" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:text="Time" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:text="Status" />
+    </TableRow>
+
+    <TableRow android:background="#DAE8FC" android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Digvijay singh"
+            android:id="@+id/retName"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/retDate"
+            android:layout_weight="1"
+            android:text="date"
+            android:layout_alignParentRight="true"/>
+
+     <!--   <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/retStatus"
+            android:layout_weight="0.5"
+            android:text="status"
+            android:layout_alignParentRight="true"/>   -->
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_weight="1"
+            android:id="@+id/statusIcon"/>
+
+    </TableRow>
+
+</TableLayout>
