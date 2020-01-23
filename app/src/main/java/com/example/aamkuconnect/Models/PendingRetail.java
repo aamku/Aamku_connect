@@ -2,43 +2,41 @@ package com.example.aamkuconnect.Models;
 
 public class PendingRetail {
 
-    String name,gst,phone;
+    String pendingName,pendingGst,pendingPhone;
 
     public PendingRetail(){
 
     }
 
-    public PendingRetail(String name,String gst,String phone){
+    public PendingRetail(String pendingName,String pendingGst,String pendingPhone){
 
-        this.name = name;
-        this.gst =  gst;
-        this.phone =  phone;
+        this.pendingName = pendingName;
+        this.pendingGst =  pendingGst;
+        this.pendingPhone =  pendingPhone;
 
     }
 
-    public String getName() {
-        return name;
+    public String getPendingName() {
+        return pendingName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPendingName(String pendingName) {
+        this.pendingName = pendingName;
     }
 
-    public String getGst() {
-        return gst;
+    public String getPendingGst() {
+        return pendingGst;
     }
 
-    public void setGst(String gst) {
-        this.gst = gst;
+    public void setPendingGst(String pendingGst) {
+        this.pendingGst = pendingGst;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPendingPhone() {
+        return pendingPhone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPendingPhone(String pendingPhone) {
+        this.pendingPhone = pendingPhone;
     }
-
-
 }

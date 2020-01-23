@@ -86,7 +86,7 @@ public class PendingRetailers extends AppCompatActivity {
 
                             JSONArray jsonArray = new JSONArray(response.body().string());
 
-                            if(jsonArray.length() > 1){
+                            if(jsonArray.length() > 0){
 
                                 pendingProgress.setVisibility(View.INVISIBLE);
 
@@ -100,12 +100,12 @@ public class PendingRetailers extends AppCompatActivity {
                                     String str3 = object.getString("mobile");
 
 
-                                    String str4 = "Name: " + str1;
+                                 /*   String str4 = "Name: " + str1;
                                     String str5 = "GST: " + str2;
-                                    String str6 = "Mobile: " + str3;
+                                    String str6 = "Mobile: " + str3;  */
 
 
-                                    PendingRetail model = new PendingRetail(str4,str5,str6);
+                                    PendingRetail model = new PendingRetail(str1,str2,str3);
                                     pendingList.add(model);
                                 }
 
@@ -113,10 +113,17 @@ public class PendingRetailers extends AppCompatActivity {
                                 pendingRetailers.setAdapter(adapter);
 
                             }
+                            else{
+
+                                pendingProgress.setVisibility(View.INVISIBLE);
+                                Toast.makeText(getApplicationContext(),"No retailer requests",Toast.LENGTH_SHORT).show();
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (IndexOutOfBoundsException e){
                             e.printStackTrace();
                         }
                     }

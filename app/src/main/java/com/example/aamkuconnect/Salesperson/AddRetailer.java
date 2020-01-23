@@ -24,6 +24,10 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -171,7 +175,12 @@ public class AddRetailer extends AppCompatActivity {
 
     private void saveRetailer(){
 
-         sp = getSharedPreferences("simplifiedcodingsharedpref", Context.MODE_PRIVATE);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date date = new Date();
+
+        String time = formatter.format(date);
+
+        sp = getSharedPreferences("simplifiedcodingsharedpref", Context.MODE_PRIVATE);
          phone_id = sp.getString("keyphone","");
 
          OkHttpClient client = new OkHttpClient.Builder()
@@ -189,6 +198,7 @@ public class AddRetailer extends AppCompatActivity {
                 .add("gst",retailer_gst.getText().toString())
                 .add("services",services.getText().toString())
                 .add("status","pending")
+                .add("time",formatter.format(date).toString())
                 .build();
 
         Request request = new Request.Builder().post(formBody).url(URL).build();
