@@ -62,6 +62,7 @@ public class AllRetailers extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         assert ab!= null;
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("All retailers");
 
         myProg = findViewById(R.id.myProg);
         retailerRecycler = findViewById(R.id.retailerRecycler);
