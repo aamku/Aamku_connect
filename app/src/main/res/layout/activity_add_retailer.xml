@@ -6,12 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Salesperson.AddRetailer"
-    android:padding="16dp">
+    android:background="@drawable/main_gradient">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="#FFF"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_margin="15dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -22,7 +25,9 @@
                 android:layout_height="45dp"
                 android:hint="Name"
                 android:id="@+id/retailer_name"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -38,6 +43,8 @@
                 android:hint="Email"
                 android:id="@+id/retailer_email"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:inputType="textEmailAddress">
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -54,6 +61,8 @@
                 android:hint="Phone"
                 android:id="@+id/retailer_phone"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:inputType="phone">
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -65,7 +74,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/retailCheck"
             android:text="Click if same whats app"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -77,7 +88,9 @@
                 android:layout_height="45dp"
                 android:hint="Whatsapp"
                 android:id="@+id/retailer_whatsapp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -92,7 +105,9 @@
                 android:layout_height="45dp"
                 android:hint="GST No."
                 android:id="@+id/retailer_gst"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -104,16 +119,19 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:hint="Products/Services required"
                 android:inputType="textMultiLine"
-            android:lines="8"
-            android:minLines="6"
-            android:gravity="top|left"
-            android:id="@+id/services"
-            android:maxLines="10"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:hint="Products/Services required"
-            android:scrollbars="vertical">
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -133,7 +151,10 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:hint="Remarks"
-                android:scrollbars="vertical">
+                android:scrollbars="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -141,8 +162,11 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
             android:id="@+id/saveRetailer"
             android:background="@drawable/main_gradient"
             android:textColor="#fff"

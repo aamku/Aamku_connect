@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#fff"
-        android:padding="15dp"
+        android:padding="10dp"
         android:layout_margin="15dp">
 
         <Spinner
