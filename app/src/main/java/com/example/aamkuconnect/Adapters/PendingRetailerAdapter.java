@@ -86,7 +86,7 @@ public class PendingRetailerAdapter extends RecyclerView.Adapter<PendingRetailer
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        Button approve;
+        Button approve,cancelBut;
         TextView retailer_row_name,retailer_row_gst,retailer_row_phone;
 
         public ViewHolder(@NonNull View itemView) {

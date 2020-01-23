@@ -41,7 +41,8 @@ import okhttp3.Response;
 public class AddRetailer extends AppCompatActivity {
 
     Button saveRetailer;
-    TextInputEditText retailer_name,retailer_email,retailer_phone,retailer_whatsapp,retailer_gst,remarks,services;
+    TextInputEditText retailer_name,retailer_email,retailer_phone,retailer_whatsapp,retailer_gst,remarks,services,
+                      retailer_state,retailer_city,retailer_address,retailer_pin;
     TextInputLayout whatsappRetailWrapper;
     AppCompatCheckBox retailCheck;
 
@@ -77,6 +78,11 @@ public class AddRetailer extends AppCompatActivity {
         retailer_phone = findViewById(R.id.retailer_phone);
         retailer_gst = findViewById(R.id.retailer_gst);
         retailer_whatsapp = findViewById(R.id.retailer_whatsapp);
+        retailer_state = findViewById(R.id.retailer_state);
+        retailer_city = findViewById(R.id.retailer_city);
+        retailer_address = findViewById(R.id.retailer_address);
+        retailer_pin = findViewById(R.id.retailer_pin);
+
         remarks = findViewById(R.id.remarks);
         services = findViewById(R.id.services);
 
@@ -143,6 +149,26 @@ public class AddRetailer extends AppCompatActivity {
                     prog1.dismiss();
                     retailer_gst.setError("Invalid GST number");
                 }
+                else if(retailer_state.getText().toString().equals("")){
+                    retailer_state.setError("Enter state");
+                    prog1.dismiss();
+                }
+                else if(retailer_city.getText().toString().equals("")){
+                    retailer_city.setError("Enter city");
+                    prog1.dismiss();
+                }
+                else if(retailer_address.getText().toString().equals("")){
+                    retailer_address.setError("Enter address");
+                    prog1.dismiss();
+                }
+                else if(retailer_pin.getText().toString().equals("")){
+                    retailer_pin.setError("Enter pin code");
+                    prog1.dismiss();
+                }
+                else if(!(retailer_pin.getText().toString().length() == 6)){
+                    retailer_pin.setError("Enter valid pin code");
+                    prog1.dismiss();
+                }
                 else if(services.getText().toString().equals("")){
 
                     prog1.dismiss();
@@ -175,7 +201,7 @@ public class AddRetailer extends AppCompatActivity {
 
     private void saveRetailer(){
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
 
         String time = formatter.format(date);
@@ -196,6 +222,10 @@ public class AddRetailer extends AppCompatActivity {
                 .add("mobile",retailer_phone.getText().toString())
                 .add("whatsapp",retailer_whatsapp.getText().toString())
                 .add("gst",retailer_gst.getText().toString())
+                .add("state",retailer_state.getText().toString())
+                .add("city",retailer_city.getText().toString())
+                .add("address",retailer_address.getText().toString())
+                .add("pin",retailer_pin.getText().toString())
                 .add("services",services.getText().toString())
                 .add("status","pending")
                 .add("time",formatter.format(date).toString())
@@ -224,6 +254,10 @@ public class AddRetailer extends AppCompatActivity {
                                 retailer_phone.setText("");
                                 retailer_whatsapp.setText("");
                                 retailer_gst.setText("");
+                                retailer_state.setText("");
+                                retailer_city.setText("");
+                                retailer_address.setText("");
+                                retailer_pin.setText("");
                                 services.setText("");
                                 Toast.makeText(getApplicationContext(),resp,Toast.LENGTH_SHORT).show();
                             }
