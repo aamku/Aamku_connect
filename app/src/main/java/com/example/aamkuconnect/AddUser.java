@@ -86,10 +86,10 @@ public class AddUser extends AppCompatActivity {
         list.add("Admin");
         list.add("SalesPerson");
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,list);
+        ArrayAdapter<String> sizeAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,list);
 
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        role.setAdapter(dataAdapter);
+        sizeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        role.setAdapter(sizeAdapter);
 
         role.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
