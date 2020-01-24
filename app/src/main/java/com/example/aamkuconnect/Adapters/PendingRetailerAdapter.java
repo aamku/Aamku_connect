@@ -35,6 +35,7 @@ import okhttp3.Response;
 public class PendingRetailerAdapter extends RecyclerView.Adapter<PendingRetailerAdapter.ViewHolder> {
 
     private static final String URL = "https://aamku-connect.herokuapp.com/approveRetailer";
+    private static final String URI = "https://aamku-connect.herokuapp.com/cancelRetailer";
 
     List<PendingRetail> pendingList;
     Context context;
@@ -60,8 +61,6 @@ public class PendingRetailerAdapter extends RecyclerView.Adapter<PendingRetailer
 
         final PendingRetail model = pendingList.get(position);
 
-
-
         holder.retailer_row_name.setText(model.getPendingName());
         holder.retailer_row_gst.setText(model.getPendingGst());
         holder.retailer_row_phone.setText(model.getPendingPhone());
@@ -77,6 +76,15 @@ public class PendingRetailerAdapter extends RecyclerView.Adapter<PendingRetailer
                approveRetailer(phone,position);
             }
         });
+
+        holder.notApproved.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            //    Toast.makeText(context,phone,Toast.LENGTH_SHORT).show();
+
+                cancelRetailer(phone,position);
+            }
+        });
     }
 
     @Override
@@ -86,13 +94,14 @@ public class PendingRetailerAdapter extends RecyclerView.Adapter<PendingRetailer
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        Button approve,cancelBut;
+        Button approve,notApproved;
         TextView retailer_row_name,retailer_row_gst,retailer_row_phone;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             approve = itemView.findViewById(R.id.approve);
+            notApproved = itemView.findViewById(R.id.notApproved);
             retailer_row_name = itemView.findViewById(R.id.retailer_row_name);
             retailer_row_gst = itemView.findViewById(R.id.retailer_row_gst);
             retailer_row_phone = itemView.findViewById(R.id.retailer_row_phone);
@@ -156,6 +165,73 @@ public class PendingRetailerAdapter extends RecyclerView.Adapter<PendingRetailer
                     public void run() {
 
                         prg1.dismiss();
+                        Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+
+    }
+
+    private void cancelRetailer(String phone,final int position){
+
+        final ProgressDialog prg2 = new ProgressDialog(context);
+        prg2.setMessage("Cancelling retailer...");
+        prg2.setCancelable(false);
+        prg2.show();
+
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .readTimeout(20,TimeUnit.SECONDS)
+                .writeTimeout(20,TimeUnit.SECONDS)
+                .build();
+
+        RequestBody formBody = new FormBody.Builder()
+                .add("phone",phone)
+                .build();
+
+        Request request = new Request.Builder().post(formBody).url(URI).build();
+
+        client.newCall(request).enqueue(new Callback() {
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull final Response response) throws IOException {
+
+                ((PendingRetailers)context).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        try {
+
+                            String resp = response.body().string();
+
+                            if(resp.equals("Retailer cancelled")){
+
+                                prg2.dismiss();
+
+                                Toast.makeText(context,resp,Toast.LENGTH_SHORT).show();
+                                pendingList.remove(position);
+                                notifyItemRemoved(position);
+
+                            }
+
+                        } catch (IOException e) {
+
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull final IOException e) {
+
+                ((PendingRetailers)context).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        prg2.dismiss();
                         Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 });

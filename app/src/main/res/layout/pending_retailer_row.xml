@@ -62,6 +62,20 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/notApproved"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/main_gradient"
+                android:text="CANCEL"
+                android:layout_below="@+id/divder"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
                 android:layout_alignParentRight="true"
                 android:id="@+id/approve"
                 android:textColor="#fff"

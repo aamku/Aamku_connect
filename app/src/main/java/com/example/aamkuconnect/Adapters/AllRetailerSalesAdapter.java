@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,8 +52,11 @@ public class AllRetailerSalesAdapter extends RecyclerView.Adapter<AllRetailerSal
         else if(model.getRetailer_status().equals("approved")){
             Glide.with(context).load(R.drawable.ic_done_green_500_24dp).into(holder.statusIcon);
         }
-        else{
+        else if(model.getRetailer_status().equals("cancel")){
             Glide.with(context).load(R.drawable.ic_highlight_off_red_400_24dp).into(holder.statusIcon);
+        }
+        else{
+            Toast.makeText(context,"Status not found",Toast.LENGTH_SHORT).show();
         }
     }
 
