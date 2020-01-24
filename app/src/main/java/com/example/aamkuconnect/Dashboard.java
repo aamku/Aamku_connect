@@ -170,6 +170,14 @@ public class Dashboard extends AppCompatActivity {
                         drawer.closeDrawers();
                         break;
 
+                    case R.id.nav_admin_retailers:
+
+                        Intent gone = new Intent(Dashboard.this,AdminSeeRetailers.class);
+                        startActivity(gone);
+                        finish();
+                        drawer.closeDrawers();
+                        break;
+
                     case R.id.nav_add_item_master:
 
                         Intent goo = new Intent(Dashboard.this,AddItemsMaster.class);
