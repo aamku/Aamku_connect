@@ -2,32 +2,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="5dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
-        app:contentPadding="4dp">
+        app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_gradient">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="#FFF"
         android:id="@+id/adminSeeRetailerName"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textAllCaps="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFF"
+                android:layout_below="@id/adminSeeRetailerName"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/adminSeeRetailerPhone"
         android:layout_below="@+id/adminSeeRetailerName"
+        android:textColor="#FFF"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"/>
 
     <TextView
@@ -35,7 +48,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/adminSeeRetailerGst"
         android:layout_below="@+id/adminSeeRetailerPhone"
-        android:layout_marginTop="5dp"/>
+        android:textColor="#FFF"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,23 +59,25 @@
         android:orientation="horizontal"
         android:layout_below="@+id/adminSeeRetailerGst"
         android:id="@+id/stateLayout"
-        android:layout_marginTop="5dp">
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/adminSeeRetailerState"
             android:layout_weight="1"
-            android:layout_marginTop="5dp"
-            android:text="Delhi"/>
+            android:textColor="#FFF"
+            android:text=""/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/adminSeeRetailerPin"
-            android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:text="Delhi"/>
+            android:textColor="#FFF"
+            android:text=""/>
 
     </LinearLayout>
 
@@ -68,7 +86,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/adminSeeRetailerAddress"
         android:layout_below="@+id/stateLayout"
-        android:layout_marginTop="5dp"/>
+        android:padding="5dp"
+        android:textColor="#FFF"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"/>
 
         </RelativeLayout>
 

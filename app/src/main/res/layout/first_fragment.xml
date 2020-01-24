@@ -26,10 +26,11 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/bankcardId"
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
+            android:layout_weight="1"
             app:cardCornerRadius="10dp"
             android:foreground="?android:attr/selectableItemBackground">
 
@@ -73,10 +74,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
+            android:layout_weight="1"
             app:cardCornerRadius="10dp"
             android:foreground="?android:attr/selectableItemBackground">
 
@@ -131,8 +133,9 @@
         tools:layout_editor_absoluteX="10dp">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="190dp"
+            android:layout_weight="1"
             android:layout_margin="10dp"
             android:clickable="true"
             app:cardCornerRadius="10dp">
@@ -174,8 +177,9 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="190dp"
+            android:layout_weight="1"
             android:layout_margin="10dp"
             android:clickable="true"
             app:cardCornerRadius="10dp">
