@@ -6,12 +6,18 @@
     android:layout_height="170dp"
     android:padding="16dp"
     android:gravity="bottom"
-    android:background="@drawable/side_nav_bar">
+    android:background="@drawable/main_gradient">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:src="@drawable/aamku_connect"
+        android:layout_marginBottom="30dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aamku connect"
+        android:text="Aamku connect..."
         android:textColor="@android:color/white"
         android:textSize="22dp"/>
 

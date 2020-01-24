@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddItemsMaster">
+    tools:context=".AddItemsMaster"
+    android:background="@drawable/main_gradient">
 
 
 <RelativeLayout
@@ -13,7 +14,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddItemsMaster">
+    tools:context=".AddItemsMaster"
+    android:background="@drawable/form_bg"
+    android:padding="10dp"
+    android:layout_margin="15dp">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -105,7 +109,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="Size:"
-        android:textSize="20sp"
+        android:textSize="18dp"
         android:layout_below="@+id/qtyWrapper"
         android:layout_weight="1"/>
 
@@ -122,7 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
+        android:textSize="18dp"
         android:text="Brand:"
         android:id="@+id/brandWrapper"
         android:layout_below="@+id/qtyWrapper"
@@ -189,12 +193,13 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_below="@+id/costLayout"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
         android:layout_marginTop="20dp"
         android:id="@+id/productSave"
+        android:layout_below="@+id/costLayout"
         android:text="SAVE"
         android:background="@drawable/main_gradient"
         android:textColor="#fff"/>
