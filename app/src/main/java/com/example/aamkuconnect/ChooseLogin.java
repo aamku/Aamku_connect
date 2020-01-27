@@ -59,7 +59,7 @@ public class ChooseLogin extends AppCompatActivity {
 
                 if(isChecked){
 
-                    Intent i = new Intent(ChooseLogin.this,PhoneAuth.class);
+                    Intent i = new Intent(ChooseLogin.this,RetailerLogin.class);
                     i.putExtra("type","Retailer");
                     startActivity(i);
                     finish();

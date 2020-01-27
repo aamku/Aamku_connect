@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddItemAdmin"></activity>
+        <activity android:name=".RetailerLogin"></activity>
+        <activity android:name=".Retailers.Register" />
+        <activity android:name=".ShowItems" />
+        <activity android:name=".AddItemAdmin" />
         <activity android:name=".AdminSeeRetailers" />
         <activity android:name=".AddItemsMaster" />
         <activity android:name=".Salesperson.AllRetailers" />

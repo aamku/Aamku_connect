@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_itemName"
+                android:text="Crown"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row_itemName"
+                android:layout_marginTop="5dp"
+                android:id="@+id/row_sku"
+                android:text="Crown"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row_sku"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="50dp"
+                android:text="page"
+                android:id="@+id/row_page"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row_sku"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/row_page"
+                android:layout_marginTop="5dp"
+                android:text="page"
+                android:id="@+id/row_price"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row_price"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/row_inner"
+                android:text="inner"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row_price"
+                android:layout_toRightOf="@+id/row_inner"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/row_outer"
+                android:text="outer"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

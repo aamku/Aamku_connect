@@ -209,17 +209,18 @@ public class AddRetailer extends AppCompatActivity {
         sp = getSharedPreferences("simplifiedcodingsharedpref", Context.MODE_PRIVATE);
          phone_id = sp.getString("keyphone","");
 
-         OkHttpClient client = new OkHttpClient.Builder()
+
+        OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20,TimeUnit.SECONDS)
                 .writeTimeout(20,TimeUnit.SECONDS)
                 .build();
 
         RequestBody formBody = new FormBody.Builder()
-                .add("added_by",phone_id)
+                                 .add("added_by",phone_id)
                 .add("name",retailer_name.getText().toString())
                 .add("email",retailer_email.getText().toString())
-                .add("mobile",retailer_phone.getText().toString())
+                .add("mobile",retailer_email.getText().toString())
                 .add("whatsapp",retailer_whatsapp.getText().toString())
                 .add("gst",retailer_gst.getText().toString())
                 .add("state",retailer_state.getText().toString())
@@ -228,7 +229,7 @@ public class AddRetailer extends AppCompatActivity {
                 .add("pin",retailer_pin.getText().toString())
                 .add("services",services.getText().toString())
                 .add("status","pending")
-                .add("time",formatter.format(date).toString())
+                .add("date",formatter.format(date).toString())
                 .build();
 
         Request request = new Request.Builder().post(formBody).url(URL).build();

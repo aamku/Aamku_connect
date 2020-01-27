@@ -118,6 +118,7 @@ public class Dashboard extends AppCompatActivity {
             menu.findItem(R.id.nav_all_retailers).setVisible(true);
             menu.findItem(R.id.nav_add_item_master).setVisible(false);
             menu.findItem(R.id.nav_admin_retailers).setVisible(false);
+            menu.findItem(R.id.nav_all_item).setVisible(true);
 
         }else if(s.equals("Retailer")){
 
@@ -129,6 +130,7 @@ public class Dashboard extends AppCompatActivity {
             menu.findItem(R.id.nav_all_retailers).setVisible(false);
             menu.findItem(R.id.nav_add_item_master).setVisible(false);
             menu.findItem(R.id.nav_admin_retailers).setVisible(false);
+            menu.findItem(R.id.nav_all_item).setVisible(true);
         }
         else{
 
@@ -140,6 +142,7 @@ public class Dashboard extends AppCompatActivity {
             menu.findItem(R.id.nav_all_retailers).setVisible(false);
             menu.findItem(R.id.nav_add_item_master).setVisible(true);
             menu.findItem(R.id.nav_admin_retailers).setVisible(true);
+            menu.findItem(R.id.nav_all_item).setVisible(true);
         }
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -183,8 +186,16 @@ public class Dashboard extends AppCompatActivity {
 
                     case R.id.nav_add_item_master:
 
-                        Intent goo = new Intent(Dashboard.this,AddItemAdmin.class);
+                        Intent goo = new Intent(Dashboard.this,AddItemsMaster.class);
                         startActivity(goo);
+                        finish();
+                        drawer.closeDrawers();
+                        break;
+
+                    case R.id.nav_all_item:
+
+                        Intent sh = new Intent(Dashboard.this,ShowItems.class);
+                        startActivity(sh);
                         finish();
                         drawer.closeDrawers();
                         break;
