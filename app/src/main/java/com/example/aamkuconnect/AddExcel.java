@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -58,6 +59,7 @@ public class AddExcel extends AppCompatActivity {
         excelSalesRecycler.setHasFixedSize(true);
         excelSalesRecycler.setLayoutManager(new LinearLayoutManager(this));
 
+        saleList = new ArrayList<>();
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(20, TimeUnit.SECONDS)
@@ -65,8 +67,11 @@ public class AddExcel extends AppCompatActivity {
                 .writeTimeout(20,TimeUnit.SECONDS)
                 .build();
 
+        RequestBody formBody = new FormBody.Builder()
+                .add("role","SalesPerson")
+                .build();
 
-        Request request = new Request.Builder().url(URL).build();
+        Request request = new Request.Builder().post(formBody).url(URL).build();
 
         client.newCall(request).enqueue(new Callback() {
 
