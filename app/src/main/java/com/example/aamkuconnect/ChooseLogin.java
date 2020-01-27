@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import com.example.aamkuconnect.Retailers.RetailerLogin;
+
 public class ChooseLogin extends AppCompatActivity {
 
     CheckBox checkAdmin,checkSales,checkRetail;
@@ -59,7 +61,7 @@ public class ChooseLogin extends AppCompatActivity {
 
                 if(isChecked){
 
-                    Intent i = new Intent(ChooseLogin.this,RetailerLogin.class);
+                    Intent i = new Intent(ChooseLogin.this, RetailerLogin.class);
                     i.putExtra("type","Retailer");
                     startActivity(i);
                     finish();

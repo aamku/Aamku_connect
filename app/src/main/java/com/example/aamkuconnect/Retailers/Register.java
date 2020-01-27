@@ -14,9 +14,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import com.example.aamkuconnect.ChooseLogin;
 import com.example.aamkuconnect.R;
-import com.example.aamkuconnect.Salesperson.AddRetailer;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -196,7 +194,7 @@ public class Register extends AppCompatActivity {
                 .add("added_by","own")
                 .add("name",reg_retailer_name.getText().toString())
                 .add("email",reg_retailer_email.getText().toString())
-                .add("mobile",reg_retailer_email.getText().toString())
+                .add("mobile",reg_retailer_phone.getText().toString())
                 .add("whatsapp",reg_retailer_whatsapp.getText().toString())
                 .add("gst",reg_retailer_gst.getText().toString())
                 .add("state",reg_retailer_state.getText().toString())
@@ -272,7 +270,7 @@ public class Register extends AppCompatActivity {
 
             case android.R.id.home:
 
-                Intent i = new Intent(Register.this, ChooseLogin.class);
+                Intent i = new Intent(Register.this, RetailerLogin.class);
                 startActivity(i);
                 finish();
         }

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RetailerLogin"
+    tools:context=".Retailers.RetailerLogin"
     android:padding="16dp">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -17,7 +17,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:hint="Phone"
+            android:hint="Phone(Include 91)"
             android:inputType="phone"
             android:id="@+id/login_retailer_pin"
             android:layout_marginTop="10dp">

@@ -119,6 +119,7 @@ public class Dashboard extends AppCompatActivity {
             menu.findItem(R.id.nav_add_item_master).setVisible(false);
             menu.findItem(R.id.nav_admin_retailers).setVisible(false);
             menu.findItem(R.id.nav_all_item).setVisible(true);
+            menu.findItem(R.id.nav_add_excel).setVisible(false);
 
         }else if(s.equals("Retailer")){
 
@@ -131,6 +132,7 @@ public class Dashboard extends AppCompatActivity {
             menu.findItem(R.id.nav_add_item_master).setVisible(false);
             menu.findItem(R.id.nav_admin_retailers).setVisible(false);
             menu.findItem(R.id.nav_all_item).setVisible(true);
+            menu.findItem(R.id.nav_add_excel).setVisible(false);
         }
         else{
 
@@ -143,6 +145,7 @@ public class Dashboard extends AppCompatActivity {
             menu.findItem(R.id.nav_add_item_master).setVisible(true);
             menu.findItem(R.id.nav_admin_retailers).setVisible(true);
             menu.findItem(R.id.nav_all_item).setVisible(true);
+            menu.findItem(R.id.nav_add_excel).setVisible(true);
         }
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -188,6 +191,13 @@ public class Dashboard extends AppCompatActivity {
 
                         Intent goo = new Intent(Dashboard.this,AddItemsMaster.class);
                         startActivity(goo);
+                        finish();
+                        drawer.closeDrawers();
+                        break;
+
+                    case R.id.nav_add_excel:
+                        Intent ex = new Intent(Dashboard.this,AddExcel.class);
+                        startActivity(ex);
                         finish();
                         drawer.closeDrawers();
                         break;
