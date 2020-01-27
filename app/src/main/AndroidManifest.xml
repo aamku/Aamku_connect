@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DealerActivity"></activity>
+        <activity android:name=".PurchaseSummaryActivity"></activity>
+        <activity android:name=".DealerActivity" />
         <activity android:name=".AddExcel" />
         <activity android:name=".Retailers.RetailerLogin" />
         <activity android:name=".Retailers.Register" />
