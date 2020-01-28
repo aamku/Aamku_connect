@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,29 +8,31 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    android:background="#F1F1F1">
+    android:padding="10dp"
+    android:background="@drawable/main_gradient"
+    android:layout_gravity="center">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clipToPadding="false"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/bankcardId"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
             android:layout_weight="1"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="#F2F2F2" />
+                    android:background="@drawable/main_gradient" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -72,12 +74,13 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
             android:layout_weight="1"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -103,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="#F2F2F2" />
+                    android:background="@drawable/main_gradient" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -125,12 +128,13 @@
         android:clipToPadding="false"
         android:gravity="center"
         android:orientation="horizontal"
-        android:id="@+id/linearLayout1"
-        android:layout_below="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
             android:layout_weight="1"
             android:layout_margin="10dp"
             android:clickable="true"
@@ -147,130 +151,76 @@
                     android:layout_height="64dp"
                     android:background="@drawable/cercle"
                     android:padding="10dp"
-                    android:src="@drawable/report" />
+                    android:src="@drawable/card" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Monthly Purchase Summary"
+                    android:text="Top Credit Limit Given"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="#F2F2F2" />
+                    android:background="@drawable/main_gradient" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Rs 500000" />
+                    android:text="700000" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/cercle"
+                    android:padding="10dp"
+                    android:src="@drawable/cup" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Outstanding Amount"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/main_gradient" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Rs 250000" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_below="@+id/linearLayout1">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                app:cardCornerRadius="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/cercle"
-                        android:padding="10dp"
-                        android:src="@drawable/card" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Total Credit Limit Given"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="#F2F2F2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="700000" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                app:cardCornerRadius="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/cercle"
-                        android:padding="10dp"
-                        android:src="@drawable/cup" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Outstanding Amount"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="#F2F2F2" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Rs 250000" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </RelativeLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
