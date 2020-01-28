@@ -34,9 +34,11 @@
            android:orientation="horizontal">
 
            <androidx.cardview.widget.CardView
-               android:layout_width="wrap_content"
+               android:layout_width="match_parent"
                android:layout_height="200dp"
-               android:layout_marginRight="10dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
+               app:cardCornerRadius="8dp"
                android:id="@+id/dealersCard"
                android:layout_weight="1">
 
@@ -47,7 +49,9 @@
                    <ImageView
                        android:layout_width="100dp"
                        android:layout_height="100dp"
-                       android:src="@drawable/manager"
+                       android:background="@drawable/cercle"
+                       android:padding="10dp"
+                       android:src="@drawable/man"
                        android:id="@+id/boss"
                        android:layout_centerInParent="true"/>
 
@@ -56,10 +60,10 @@
                        android:layout_height="wrap_content"
                        android:layout_below="@+id/boss"
                        android:layout_centerHorizontal="true"
-                       android:textSize="18dp"
-                       android:id="@+id/count"
+                       android:textSize="16dp"
                        android:textStyle="bold"
-                       android:textColor="#000"
+                       android:textColor="#666"
+                       android:layout_marginTop="10dp"
                        android:text="Total Dealers"/>
 
                </RelativeLayout>
@@ -67,8 +71,11 @@
            </androidx.cardview.widget.CardView>
 
            <androidx.cardview.widget.CardView
-               android:layout_width="wrap_content"
+               android:layout_width="match_parent"
                android:layout_height="200dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
+               app:cardCornerRadius="8dp"
                android:layout_weight="1"
                android:id="@+id/todayPurchase">
 
@@ -79,6 +86,8 @@
                    <ImageView
                        android:layout_width="100dp"
                        android:layout_height="100dp"
+                       android:background="@drawable/cercle"
+                       android:padding="10dp"
                        android:src="@drawable/card"
                        android:id="@+id/todayPur"
                        android:layout_centerInParent="true"/>
@@ -88,11 +97,11 @@
                        android:layout_height="wrap_content"
                        android:layout_below="@+id/todayPur"
                        android:layout_centerHorizontal="true"
-                       android:textSize="18dp"
-                       android:gravity="center"
+                       android:textSize="16dp"
                        android:textStyle="bold"
-                       android:textColor="#000"
-                       android:text="Today purcha\n-se summary"/>
+                       android:textColor="#666"
+                       android:layout_marginTop="10dp"
+                       android:text="Ppurchase Summary"/>
 
                </RelativeLayout>
 
@@ -108,11 +117,13 @@
             android:layout_marginTop="10dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="8dp"
                 android:layout_weight="1"
-                android:id="@+id/monthlyPurchase"
-                android:layout_marginRight="10dp">
+                android:id="@+id/monthlyPurchase">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -121,6 +132,8 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:background="@drawable/cercle"
+                        android:padding="10dp"
                         android:src="@drawable/money"
                         android:id="@+id/monthPur"
                         android:layout_centerInParent="true"/>
@@ -130,19 +143,22 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/monthPur"
                         android:layout_centerHorizontal="true"
-                        android:textSize="18dp"
-                        android:gravity="center"
+                        android:textSize="16dp"
                         android:textStyle="bold"
-                        android:textColor="#000"
-                        android:text="Monthly\n-purchase"/>
+                        android:textColor="#666"
+                        android:layout_marginTop="10dp"
+                        android:text="Monthly Purchase"/>
 
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="8dp"
                 android:id="@+id/outstandingCard"
                 android:layout_weight="1">
 
@@ -153,6 +169,8 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:background="@drawable/cercle"
+                        android:padding="10dp"
                         android:src="@drawable/bribe"
                         android:id="@+id/outstanding"
                         android:layout_centerInParent="true"/>
@@ -162,11 +180,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/outstanding"
                         android:layout_centerHorizontal="true"
-                        android:textSize="18dp"
-                        android:gravity="center"
+                        android:textSize="16dp"
                         android:textStyle="bold"
-                        android:textColor="#000"
-                        android:text="Outstanding\n-amount"/>
+                        android:textColor="#666"
+                        android:layout_marginTop="10dp"
+                        android:text="Outstanding Amount"/>
 
                 </RelativeLayout>
 
@@ -189,7 +207,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="5dp"
             android:id="@+id/retailCard"
             android:layout_gravity="center_horizontal">
 
@@ -200,7 +221,9 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/man"
+                    android:background="@drawable/cercle"
+                    android:padding="10dp"
+                    android:src="@drawable/retailer"
                     android:id="@+id/man"
                     android:layout_centerInParent="true"/>
 
@@ -209,9 +232,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/man"
                     android:layout_centerHorizontal="true"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
-                    android:textColor="#000"
+                    android:textColor="#666"
+                    android:layout_marginTop="10dp"
                     android:text="Retailer Management"/>
 
 
@@ -222,6 +246,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="200dp"
             android:layout_height="200dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="5dp"
             android:id="@+id/orderCard"
             android:layout_gravity="center_horizontal">
 
@@ -232,6 +260,8 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:background="@drawable/cercle"
+                android:padding="10dp"
                 android:id="@+id/relImg"
                 android:src="@drawable/relationship"
                 android:layout_centerInParent="true"/>
@@ -241,9 +271,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/relImg"
                     android:layout_centerHorizontal="true"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
-                    android:textColor="#000"
+                    android:textColor="#666"
+                    android:layout_marginTop="10dp"
                     android:text="Order Management"/>
 
             </RelativeLayout>
