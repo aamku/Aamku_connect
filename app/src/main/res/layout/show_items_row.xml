@@ -7,9 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
-        app:contentPadding="4dp">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,22 +17,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/row_itemName"
-                android:text="Crown"/>
+                android:text="Crown"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/main_gradient"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/row_itemName"
-                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:id="@+id/row_sku"
-                android:text="Crown"/>
+                android:text="Sku: 8-112"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/row_sku"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="50dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentLeft="true"
                 android:text="page"
                 android:id="@+id/row_page"/>
 
@@ -42,9 +51,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/row_sku"
-                android:layout_marginLeft="50dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
                 android:layout_toRightOf="@+id/row_page"
-                android:layout_marginTop="5dp"
                 android:text="page"
                 android:id="@+id/row_price"/>
 
@@ -52,8 +63,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/row_price"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="50dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentLeft="true"
                 android:id="@+id/row_inner"
                 android:text="inner"/>
 
@@ -62,8 +76,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/row_price"
                 android:layout_toRightOf="@+id/row_inner"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="50dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentRight="true"
                 android:id="@+id/row_outer"
                 android:text="outer"/>
 
