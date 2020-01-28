@@ -57,6 +57,7 @@
                        android:layout_below="@+id/boss"
                        android:layout_centerHorizontal="true"
                        android:textSize="18dp"
+                       android:id="@+id/count"
                        android:textStyle="bold"
                        android:textColor="#000"
                        android:text="Total Dealers"/>

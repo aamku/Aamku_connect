@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Salesperson.OrderManagement">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        android:id="@+id/my_tab"
+        app:tabGravity="fill"
+        app:tabBackground="@color/colorPrimary"
+        app:tabIndicatorColor="#fff"
+        app:tabMode="fixed"
+        app:tabTextColor="#cdcdcd"
+        app:tabSelectedTextColor="#fff"/>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/my_tab"
+        android:id="@+id/pager">
+
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/but"
+        android:layout_alignParentBottom="true"
+        android:background="@color/customColor"
+        android:text="Hello"/>
+
+
+
+</RelativeLayout>
