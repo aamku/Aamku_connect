@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddExcel"></activity>
+        <activity android:name=".AllDealers"></activity>
+        <activity android:name=".AddExcel" />
         <activity android:name=".Retailers.RetailerLogin" />
         <activity android:name=".Retailers.Register" />
         <activity android:name=".ShowItems" />
@@ -19,6 +20,8 @@
         <activity android:name=".Salesperson.AllRetailers" />
         <activity android:name=".PendingRetailers" />
         <activity android:name=".Salesperson.AddRetailer" />
+        <activity android:name=".Salesperson.RetailManagement" />
+        <activity android:name=".Salesperson.OrderManagement" />
         <activity android:name=".CheckOtp" />
         <activity android:name=".PhoneAuth" />
         <activity android:name=".ChooseLogin" />

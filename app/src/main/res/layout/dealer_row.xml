@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/customColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dNam"
+                android:layout_marginTop="5dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:text="Dealer"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dPhon"
+                android:layout_below="@+id/dNam"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="Dealer"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dLoc"
+                android:layout_below="@+id/dPhon"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="Dealer"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dPinCode"
+                android:layout_below="@+id/dLoc"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="Dealer"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dAdd"
+                android:layout_below="@+id/dPinCode"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="Dealer"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

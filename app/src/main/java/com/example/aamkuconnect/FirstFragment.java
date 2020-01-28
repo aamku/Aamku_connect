@@ -20,11 +20,17 @@ import com.example.aamkuconnect.Salesperson.RetailManagement;
 
 public class FirstFragment extends Fragment {
 
-    CardView  bankcardId,purchaseCard,orderManage,retailManage;
     SharedPreferences sharedPreferences;
-    LinearLayout retailerSection,cardLayout;
 
     String s;
+
+    //ADmin section
+    LinearLayout adminCard;
+    CardView dealersCard,todayPurchase,monthlyPurchase,outstandingCard;
+
+    //Retailer section
+    LinearLayout saleCard;
+    CardView retailCard,orderCard;
 
     @Nullable
     @Override
@@ -32,25 +38,41 @@ public class FirstFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.first_fragment,container,false);
 
-        bankcardId = view.findViewById(R.id.bankcardId);
-        purchaseCard = view.findViewById(R.id.purchaseCard);
-        cardLayout = view.findViewById(R.id.cardLayout);
-        orderManage = view.findViewById(R.id.orderManage);
-        retailManage = view.findViewById(R.id.retailManage);
+        //ADmin
+        dealersCard = view.findViewById(R.id.dealersCard);
+        todayPurchase = view.findViewById(R.id.todayPurchase);
+        monthlyPurchase = view.findViewById(R.id.monthlyPurchase);
+        outstandingCard = view.findViewById(R.id.outstandingCard);
+        adminCard = view.findViewById(R.id.adminCard);
 
-        retailerSection = view.findViewById(R.id.retailerSection);
+        //salesperson
+        saleCard = view.findViewById(R.id.saleCard);
+        retailCard = view.findViewById(R.id.retailCard);
+        orderCard=  view.findViewById(R.id.orderCard);
+
+
+
 
         sharedPreferences = getActivity().getSharedPreferences("simplifiedcodingsharedpref", Context.MODE_PRIVATE);
         s = sharedPreferences.getString("keytype","");
 
         if(s.equals("Salesperson")){
 
-            bankcardId.setVisibility(View.INVISIBLE);
-            purchaseCard.setVisibility(View.INVISIBLE);
-            cardLayout.setVisibility(View.INVISIBLE);
+           adminCard.setVisibility(View.INVISIBLE);
+           saleCard.setVisibility(View.VISIBLE);
+        }
+        else if(s.equals("Retailer")){
+
+            saleCard.setVisibility(View.VISIBLE);
+            adminCard.setVisibility(View.INVISIBLE);
+        }
+        else{
+
+            saleCard.setVisibility(View.INVISIBLE);
+            adminCard.setVisibility(View.VISIBLE);
         }
 
-        orderManage.setOnClickListener(new View.OnClickListener() {
+        orderCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -60,12 +82,22 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        retailManage.setOnClickListener(new View.OnClickListener() {
+        retailCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent in = new Intent(getActivity(), RetailManagement.class);
                 startActivity(in);
+                getActivity().finish();
+            }
+        });
+
+        dealersCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getActivity(),AllDealers.class);
+                startActivity(i);
                 getActivity().finish();
             }
         });

@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +45,9 @@ public class RetailManagement extends AppCompatActivity {
     ProgressBar progRetail;
     RetManagAdapter adapter;
     List<RetManageModel> managList;
+    String salePersonId;
+
+    SharedPreferences sp;
 
     Button addRet;
 
@@ -57,6 +62,9 @@ public class RetailManagement extends AppCompatActivity {
         assert ab!= null;
         ab.setTitle("Order management");
         ab.setDisplayHomeAsUpEnabled(true);
+
+        sp = getSharedPreferences("simplifiedcodingsharedpref", Context.MODE_PRIVATE);
+        salePersonId = sp.getString("keyphone","");
 
         recyclerRet = findViewById(R.id.recyclerRet);
         progRetail = findViewById(R.id.progRetail);
@@ -82,7 +90,11 @@ public class RetailManagement extends AppCompatActivity {
                 .writeTimeout(20,TimeUnit.SECONDS)
                 .build();
 
-        Request request = new Request.Builder().url(URL).build();
+        RequestBody formBody = new FormBody.Builder()
+                .add("id",salePersonId)
+                .build();
+
+        Request request = new Request.Builder().post(formBody).url(URL).build();
 
         client.newCall(request).enqueue(new Callback() {
 

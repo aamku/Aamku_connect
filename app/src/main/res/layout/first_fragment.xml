@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/main_gradient">
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,12 +17,242 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:background="@drawable/main_gradient"
+    android:padding="16dp"
     android:layout_gravity="center">
 
-
+    //Admin card
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/adminCard">
+
+       // 1st row
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="wrap_content"
+               android:layout_height="200dp"
+               android:layout_marginRight="10dp"
+               android:id="@+id/dealersCard"
+               android:layout_weight="1">
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+
+                   <ImageView
+                       android:layout_width="100dp"
+                       android:layout_height="100dp"
+                       android:src="@drawable/manager"
+                       android:id="@+id/boss"
+                       android:layout_centerInParent="true"/>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/boss"
+                       android:layout_centerHorizontal="true"
+                       android:textSize="18dp"
+                       android:textStyle="bold"
+                       android:textColor="#000"
+                       android:text="Total Dealers"/>
+
+               </RelativeLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="wrap_content"
+               android:layout_height="200dp"
+               android:layout_weight="1"
+               android:id="@+id/todayPurchase">
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+
+                   <ImageView
+                       android:layout_width="100dp"
+                       android:layout_height="100dp"
+                       android:src="@drawable/card"
+                       android:id="@+id/todayPur"
+                       android:layout_centerInParent="true"/>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/todayPur"
+                       android:layout_centerHorizontal="true"
+                       android:textSize="18dp"
+                       android:gravity="center"
+                       android:textStyle="bold"
+                       android:textColor="#000"
+                       android:text="Today purcha\n-se summary"/>
+
+               </RelativeLayout>
+
+           </androidx.cardview.widget.CardView>
+
+       </LinearLayout>
+
+        //2nd row
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:id="@+id/monthlyPurchase"
+                android:layout_marginRight="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/money"
+                        android:id="@+id/monthPur"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/monthPur"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:text="Monthly\n-purchase"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:id="@+id/outstandingCard"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bribe"
+                        android:id="@+id/outstanding"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/outstanding"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:text="Outstanding\n-amount"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>   -->
+
+    //Salesperson Card
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/saleCard"
+        android:layout_centerInParent="true">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/retailCard"
+            android:layout_gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/man"
+                    android:id="@+id/man"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/man"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Retailer Management"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/orderCard"
+            android:layout_gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/relImg"
+                android:src="@drawable/relationship"
+                android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relImg"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Order Management"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+  <!--  <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -220,7 +459,9 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+    </LinearLayout>   -->
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
+
+</ScrollView>
