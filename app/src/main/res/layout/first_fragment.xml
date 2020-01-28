@@ -75,6 +75,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
+            android:id="@+id/purchaseCard"
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
@@ -87,6 +88,13 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1">
+
+                </androidx.cardview.widget.CardView>
 
                 <ImageView
                     android:layout_width="64dp"
@@ -125,6 +133,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/cardLayout"
         android:clipToPadding="false"
         android:gravity="center"
         android:orientation="horizontal"
@@ -218,6 +227,82 @@
                     android:text="Rs 250000" />
 
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/retailerSection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardLayout">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/orderManage">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/cercle"
+                android:id="@+id/cupIm"
+                android:layout_centerInParent="true"
+                android:padding="10dp"
+                android:src="@drawable/man" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cupIm"
+                android:layout_centerHorizontal="true"
+                android:text="Order management"
+                android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/retailManage">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/cercle"
+                android:padding="10dp"
+                android:id="@+id/cupImg"
+                android:layout_centerInParent="true"
+                android:src="@drawable/card" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cupImg"
+                android:layout_centerInParent="true"
+                android:text="Retailer Management"
+                android:textStyle="bold" />
+
+            </RelativeLayout>
+
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
