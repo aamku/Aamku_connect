@@ -4,31 +4,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="8dp"
         app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/customColor"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/dNam"
-                android:layout_marginTop="5dp"
                 android:textColor="#fff"
-                android:layout_marginLeft="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
                 android:text="Dealer"
+                android:background="@drawable/main_gradient"
                 android:textStyle="bold"/>
 
             <TextView
@@ -36,8 +37,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dPhon"
                 android:layout_below="@+id/dNam"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="Dealer"
                 android:textStyle="bold"/>
 
@@ -46,8 +48,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dLoc"
                 android:layout_below="@+id/dPhon"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="Dealer"
                 android:textStyle="bold"/>
 
@@ -56,8 +59,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dPinCode"
                 android:layout_below="@+id/dLoc"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="Dealer"
                 android:textStyle="bold"/>
 
@@ -66,9 +70,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dAdd"
                 android:layout_below="@+id/dPinCode"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
                 android:text="Dealer"
                 android:textStyle="bold"/>
 
