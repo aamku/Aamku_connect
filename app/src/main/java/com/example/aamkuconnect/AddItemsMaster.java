@@ -239,7 +239,7 @@ public class AddItemsMaster extends AppCompatActivity {
                      pr.hide();
                  }
                  else if(product_rule_type.getText().toString().equals("")){
-                   product_mrp.setError("Enter product MRP");
+                   product_rule_type.setError("Enter rule type");
                    pr.hide();
                  }
                  else{
